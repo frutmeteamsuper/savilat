@@ -9,10 +9,36 @@ import { ScriptService } from '@app/shared/services/script.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    public scriptService:ScriptService
+    public script:ScriptService
   ) { }
 
   ngOnInit(): void {
+    this.script.load(
+      'popper',                 
+      'jquery' ,                           
+      'bootstrap', 
+      'jarallax',                      
+      'ajaxchimp',                       
+      'appear',                           
+      'circle-progress',                           
+      'popup',                         
+      'validate',                 
+      'nouislider',                         
+      'odometer',                         
+      'swiper',                          
+      'tiny-slider',                           
+      'wnumb',                         
+      'wow',                           
+      'isotope',                          
+      'countdown',                         
+      'owl-carousel',                        
+      'twentytwenty',                        
+      'move',                         
+      'parallax',                          
+      'latinos',                           
+      'typed')
+      .then(data => {console.log('script loaded ', data);}).catch(error => console.log(error));
+     }
   }
 
-}
+
